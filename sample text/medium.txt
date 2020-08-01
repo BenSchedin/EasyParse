@@ -1,0 +1,4 @@
+This is a medium test file that has
+text on multiple lines, contains punctuation.
+This text file also has multiple
+sentences.

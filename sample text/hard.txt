@@ -1,0 +1,2 @@
+all ascii characters
+extremely long files
