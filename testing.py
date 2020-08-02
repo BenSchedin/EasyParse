@@ -14,6 +14,8 @@ def main():
 
     print(easy)
     print(len(easy))
+    print(easy.count_chars())
+    print(easy.count_words())
 
 
 if __name__ == "__main__":
