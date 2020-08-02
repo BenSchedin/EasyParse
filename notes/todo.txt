@@ -1,0 +1,3 @@
+Update documentation in README.md
+Add comments to all sections of code
+

@@ -40,6 +40,15 @@ def main():
     print(easy[1])
     print("")
 
+    string = ""
+    for item in easy.regex_extract("is"):
+        string += "{}\n\n".format(item)
+    print(string)
+    print("")
+
+    easy.write("output/test1.txt")
+    easy.write("output/test2.txt", data=easy.regex_extract("is"))
+
 
 if __name__ == "__main__":
     main()

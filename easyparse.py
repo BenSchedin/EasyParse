@@ -46,6 +46,16 @@ class TextParser:
 
         return string
 
+    def write(self, file, data=None):
+        with open(file, "w") as f:
+            if data is None:
+                f.write(self.string)
+            elif type(data) is list:
+                string = ""
+                for item in data:
+                    string += "{}\n\n".format(item)
+                f.write(string)
+
     def count_chars(self):
         char_dict = {}
 
