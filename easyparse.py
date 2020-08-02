@@ -12,6 +12,23 @@ import re
 class TextParser:
     def __init__(self, file):
         self.string = self.load(file)
+        self.iter_index = 0
+
+    def __iter__(self):
+        self.iter_index = 0
+        return self
+
+    def __next__(self):
+        if self.iter_index >= len(self.string):
+            self.iter_index = 0
+            raise StopIteration
+        else:
+            current = self.string[self.iter_index]
+            self.iter_index += 1
+            return current
+
+    def __getitem__(self, index):
+        return self.string[index]
 
     def __str__(self):
         return self.string

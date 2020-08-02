@@ -20,12 +20,25 @@ def main():
     print(easy.count_words())
     print("")
 
-    matches = easy.regex_raw("a")
+    print(easy.iter_index)
+    easy.index = 10
+    print(easy.iter_index)
+    for char in easy:
+        print(char)
+    print(easy.iter_index)
+    print("")
+
+    matches = easy.regex_raw("is")
 
     for match in matches:
         print(match)
+    print("")
 
     print(easy.regex_extract("is"))
+    print("")
+
+    print(easy[1])
+    print("")
 
 
 if __name__ == "__main__":

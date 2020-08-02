@@ -1,1 +1,0 @@
-implement __iter__ for TextParser
