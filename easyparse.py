@@ -6,6 +6,8 @@
 
 """
 
+import re
+
 
 class TextParser:
     def __init__(self, file):
@@ -16,6 +18,9 @@ class TextParser:
 
     def __len__(self):
         return len(self.string)
+
+    def __add__(self, other):
+        return self.string + other.string
 
     @staticmethod
     def load(file):
@@ -45,3 +50,22 @@ class TextParser:
                 word_dict[word] += 1
 
         return word_dict
+
+    def regex_raw(self, expression):
+        pattern = re.compile(r"{}".format(expression))
+
+        matches = pattern.finditer(self.string)
+
+        return matches
+
+    def regex_extract(self, expression):
+        matches = self.regex_raw(expression)
+
+        data = []
+
+        for match in matches:
+            span = match.span()
+            text = self.string[span[0]:span[1]]
+            data.append(text)
+
+        return data
